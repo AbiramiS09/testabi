@@ -1,0 +1,18 @@
+{
+	"name": "Multifilesource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "myfolder"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

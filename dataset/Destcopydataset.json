@@ -1,0 +1,23 @@
+{
+	"name": "Destcopydataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Pipelinebloblinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"DestFile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "destination"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

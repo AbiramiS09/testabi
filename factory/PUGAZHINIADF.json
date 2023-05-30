@@ -1,0 +1,9 @@
+{
+	"name": "PUGAZHINIADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ff3c428c-f518-4b66-bac5-293264d0500e",
+		"tenantId": "850aa7b0-a194-49b1-a5e4-922a0a2f7d08"
+	}
+}

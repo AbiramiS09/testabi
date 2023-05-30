@@ -1,0 +1,74 @@
+{
+	"name": "PL_HTTPPipelinetest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "httpdataset",
+						"type": "DatasetReference",
+						"parameters": {
+							"BaseURL": {
+								"value": "@variables('BaseURL')",
+								"type": "Expression"
+							},
+							"RelativeURL": {
+								"value": "@variables('RELATIVEURL')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "HTTPDESTINATIONdataset",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"variables": {
+			"BaseURL": {
+				"type": "String",
+				"defaultValue": "https://github.com/"
+			},
+			"RELATIVEURL": {
+				"type": "String",
+				"defaultValue": "AbiramiS09/Test/blob/main/test.py"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-05-24T10:31:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
